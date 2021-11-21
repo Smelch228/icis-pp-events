@@ -41,7 +41,7 @@ const submitStyle = {
     display: 'block'
 };
 
-export default function Login(){ 
+export default function Login() : JSX.Element { 
     const handleSubmit = useCallback(() => console.log("pressed"),[])
     return(<form style={formStyle} onSubmit={handleSubmit} >
         <div>
