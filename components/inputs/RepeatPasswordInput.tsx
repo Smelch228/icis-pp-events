@@ -9,13 +9,13 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 interface State {
-  password: string;
+  repeatedPassword: string;
   showPassword: boolean;
 }
 
 export default function InputAdornments() {
   const [values, setValues] = React.useState<State>({
-    password: '',
+    repeatedPassword: '',
     showPassword: false,
   });
 
@@ -39,12 +39,12 @@ export default function InputAdornments() {
     <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
       <div>
         <FormControl sx={{ m: 1, width: '35ch' }} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Пароль</InputLabel>
+          <InputLabel htmlFor="outlined-adornment-repeated-password">Повторите пароль</InputLabel>
           <OutlinedInput
-            id="outlined-adornment-password"
+            id="outlined-adornment-repeated-password"
             type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
-            onChange={handleChange('password')}
+            value={values.repeatedPassword} 
+            onChange={handleChange('repeatedPassword')}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
@@ -57,7 +57,7 @@ export default function InputAdornments() {
                 </IconButton>
               </InputAdornment>
             }
-            label="Пароль"
+            label="Повторите пароль"
           />
         </FormControl>
       </div>

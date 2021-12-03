@@ -1,54 +1,16 @@
-import React, { useRef, useCallback } from "react";
-const appStyle = {
-    height: '250px',
-    display: 'flex'
-};
+import Password from "../../components/inputs/PasswordInput";
+import Login from "../../components/inputs/UserInput";
+import FormHelperText from '@mui/material/FormHelperText';
+import Button from "@mui/material/Button";
 
-const formStyle = {
-    margin: 'auto',
-    padding: '10px',
-    border: '1px solid #c9c9c9',
-    borderRadius: '5px',
-    background: '#f5f5f5',
-    width: '220px',
-    display: 'block'
-};
-
-const labelStyle = {
-    margin: '10px 0 5px 0',
-    fontFamily: 'Arial, Helvetica, sans-serif',
-    fontSize: '15px',
-};
-
-const inputStyle = {
-    margin: '5px 0 10px 0',
-    padding: '5px', 
-    border: '1px solid #bfbfbf',
-    borderRadius: '3px',
-    boxSizing: 'border-box',
-    width: '100%'
-};
-
-const submitStyle = {
-    margin: '10px 0 0 0',
-    padding: '7px 10px',
-    border: '1px solid #efffff',
-    borderRadius: '3px',
-    background: '#3085d6',
-    width: '100%', 
-    fontSize: '15px',
-    color: 'white',
-    display: 'block'
-};
-
-export default function Login() : JSX.Element { 
-    const handleSubmit = useCallback(() => console.log("pressed"),[])
-    return(<form style={formStyle} onSubmit={handleSubmit} >
+const Auth = () => (
+    <div>
+        <Login />
         <div>
-            <input type="text" name="username" id="" />
-            <input type="password" name="password" id="" />
-          <button style={submitStyle} type="submit">Submit</button>
+            <Password/>
+            <Button>Забыли пароль?</Button>
         </div>
-      </form>
+    </div>
 )
-}
+
+export default Auth;
