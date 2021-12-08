@@ -3,6 +3,7 @@ import Login from "../../components/inputs/UserInput";
 import FormHelperText from '@mui/material/FormHelperText';
 import Button from "@mui/material/Button";
 import LoginButton from "../../components/buttons/PrimaryActionButton"
+import { PASSWORD_FORGOT, HAS_NO_ACC } from "../../common/consts/texts";
 
 
 const Auth = () => (
@@ -10,11 +11,11 @@ const Auth = () => (
         <Login />
         <div>
             <Password/>
-            <Button>Забыли пароль?</Button>
+            <Button>{PASSWORD_FORGOT}</Button>
         </div>  
         <div>
             <LoginButton />
-            <Button variant="text" size="small" color="inherit">Нет аккаунта?</Button>
+            <Button variant="text" size="small" color="inherit">{HAS_NO_ACC}</Button>
         </div>
     </div>
 )
