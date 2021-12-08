@@ -4,6 +4,10 @@ import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+export type TFloatingActionButtonProps = {
+    textValue?: string 
+}
+
 const theme = createTheme({
     palette: {
       primary: {
@@ -16,12 +20,12 @@ const theme = createTheme({
     },
   });
 
-export default function FloatingActionButtons() {
+export default function FloatingActionButtons({textValue}: TFloatingActionButtonProps) {
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ '& > :not(style)': { m: 1, width: '35ch' } }}>
       <Fab size = "small" variant="extended" color="primary">
-        Вход
+        {textValue ?? "Вход"}
       </Fab>
     </Box>
     </ThemeProvider>  
