@@ -11,16 +11,16 @@ export default function MultiActionAreaCard() {
         <CardMedia
           component="img"
           height="140"
-          image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
+          image="https://memepedia.ru/wp-content/uploads/2017/05/%D0%BC%D0%B0%D0%BA%D1%81-%D0%B8%D0%B4%D0%B8-%D0%BD%D0%B0%D1%85%D1%83%D0%B9-%D0%BC%D0%B5%D0%BC.jpg"
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            Пашол нахуй
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          пашол нахуй пашол нахуй пашол нахуй пашол нахуй пашол нахуй пашол нахуй
+          пашол нахуй пашол нахуй пашол нахуй пашол нахуй пашол нахуй пашол нахуй
           </Typography>
         </CardContent>
       </CardActionArea>
