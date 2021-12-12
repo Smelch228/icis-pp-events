@@ -24,7 +24,7 @@ export default function FloatingActionButtons({textValue}: TFloatingActionButton
   return (
     <ThemeProvider theme={theme}>
     <Box sx={{ '& > :not(style)': { m: 1, width: '35ch' } }}>
-      <Fab size = "small" variant="extended" color="primary">
+      <Fab size = "large" variant="extended" color="primary">
         {textValue ?? "Вход"}
       </Fab>
     </Box>

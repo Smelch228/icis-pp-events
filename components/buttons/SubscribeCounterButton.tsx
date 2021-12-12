@@ -1,11 +1,23 @@
-import * as React from 'react';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Button } from '@mui/material';
+import { useMemo } from 'react';
 
-export default function IconChips(){
+type TSubcribeCounter = {
+  currentSubscribers: number,
+  maxSubscribers: number,
+  handleClick: () => void
+}
 
+export default function IconChips({currentSubscribers, maxSubscribers, handleClick}: TSubcribeCounter){
+const countSubscribers = useMemo(
+  () => `${currentSubscribers ?? 0}/${maxSubscribers ?? 0}`
+  ,
+  [currentSubscribers, maxSubscribers],
+)
   return (
-    <Chip icon={<NotificationsIcon />} label="5/14" />
-  );
+    <Button onClick={handleClick}>
+      <Chip icon={<NotificationsIcon />} label={countSubscribers} />
+    </Button>
+  )
 }

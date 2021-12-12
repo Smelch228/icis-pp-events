@@ -17,7 +17,7 @@ export default function InputWithIcon() {
             </InputAdornment>
           ),
         }}
-        variant="standard"
+        variant="outlined"
       />
     </Box>
   );
