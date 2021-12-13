@@ -1,0 +1,10 @@
+.authcard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+    min-width: 411px;
+    width: 411px;
+    margin: 0 auto;
+}
