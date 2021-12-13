@@ -3,13 +3,14 @@ import Search from "../../components/inputs/EventsSearchInput";
 import AddEventButton from "../../components/buttons/CreateEventButton";
 import EventFilterButton from "../../components/buttons/EventFilterButtton";
 import { css } from "@emotion/css";
+import Typography from '@mui/material/Typography'
 
 const parentStyles = css`
       margin: 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgb(218, 210, 205);
+      background-color: rgb(255, 255, 255);
       flex-direction: column;
       min-width: 411px;
       width: 411px;`
@@ -40,7 +41,7 @@ const Events = () => (
         `}
       >
         {[...Array(26).fill('events')].map((card, i) => (
-          <Card key={i} />
+          <Card key={i}/>
         ))}
       </ul>
   </div>

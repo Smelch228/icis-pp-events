@@ -33,7 +33,9 @@ const Auth = () => (
         align-items: center;
       `}
     >
-      <LoginButton textValue={LOGIN} />
+      <Button href="http://localhost:3000/events">
+        <LoginButton textValue={LOGIN} />
+      </Button>
       <Button variant="text" size="small" color="inherit" href="http://localhost:3000/register">
         {HAS_NO_ACC}
       </Button>
