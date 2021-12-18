@@ -23,7 +23,7 @@ export default function MultiActionAreaCard() {
             <Stack direction="row" spacing={1}>
               <Chip label="СПОРТ" variant="filled"></Chip>
               <Chip label="ХОББИ" variant="filled"></Chip>
-              <Chip label="ПИВО" variant="filled"></Chip>
+              <Chip label="ПЕЧАЛЬ" variant="filled"></Chip>
               <Chip label="ГРУСТЬ" variant="filled"></Chip>
             </Stack>
             <div
