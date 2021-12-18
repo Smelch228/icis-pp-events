@@ -1,10 +1,17 @@
-const Error = () => (
-    
-    <>
-      <h1>404</h1>
-      <h2>НЕ ТОТ АДРЕС ВВОДИШЬ, ТВАРЮГА!!!</h2>
-    </>
-    
-);
+import { css } from '@emotion/css'
 
-export default Error;
+const Error = () => (
+  <div
+    className={css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    `}
+  >
+    <h1>404</h1>
+    <h2>Вы ввели неверный адрес!</h2>
+  </div>
+)
+
+export default Error
