@@ -29,15 +29,14 @@ const theme = createTheme({
 const DetailedEvent = () => {
   const {userId:user, username, lastname} = useAuth();
   const router = useRouter();
-  const {id: event} = router.query;
-  const userId = 1;
+  const {id: eventId} = router.query;
+  console.log({eventId})
 
   const [subscribers, setSubscribers] = useState(4);
-  const handleClick = () => {setSubscribers(subscribers + 1)}
 
-  useEffect(()=>{
-    axios.get('http://localhost:8000/api/events/getEventsByUserId/1').then(x => console.log({x}))
-  },[])
+  // useEffect(()=>{
+  //   axios.get('http://localhost:8000/api/events/getEventsByUserId/1').then(x => console.log({x}))
+  // },[])
 
 
   return (
@@ -62,7 +61,7 @@ const DetailedEvent = () => {
         <Button href="http://localhost:3000/events">
           <BackButton />
         </Button>
-        <SubscribeCounterButton currentSubscribers={subscribers} maxSubscribers={5} event={Number(event)} user={user} />
+        <SubscribeCounterButton currentSubscribers={subscribers} maxSubscribers={5} event={Number(eventId)} user={user} />
       </Stack>
     </div>
     <div

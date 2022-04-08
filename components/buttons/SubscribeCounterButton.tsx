@@ -22,6 +22,8 @@ export default function SubscribeCounterButton(
     handleClick
   } : TSubcribeCounter) {
 
+    console.log('in props: ', {event});
+
     const showSnackBar = () => (
       <Snackbar
               anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
@@ -35,6 +37,9 @@ export default function SubscribeCounterButton(
 const [subscribeState, subscribe] = useState(isSubscribed);
 
 const [subscribedQty, setSubscribedQty] = useState(currentSubscribers);
+
+const payload = useMemo(()=>({event, user}),[event, user]);
+console.log({payload});
 
 const countSubscribers = useCallback(
   (newSubscribers) => {
@@ -50,12 +55,11 @@ const handleSubscribe = useCallback(
   () => {
     handleClick?.() ?? subscribe((isSubscribed)=>{
       if(!isSubscribed && subscribedQty<=(maxSubscribers-1)){
-        axios.post('/user', {
-          user,
-          event
-        })
+        axios.post('http://localhost:8000/api/user/eventEntry', payload)
         .then(function (response) {
-          setSubscribedQty(subscribedQty+1);
+          if(response.status === 200){
+            setSubscribedQty(subscribedQty+1);
+          }
           console.log(response);
         })
         .catch(function (error) {
@@ -64,12 +68,11 @@ const handleSubscribe = useCallback(
         return !isSubscribed
       }
       else if(isSubscribed){
-        axios.patch('/user', {
-          user,
-          event
-        })
+        axios.patch('http://localhost:8000/api/user/eventLeave', payload)
         .then(function (response) {
-          setSubscribedQty(subscribedQty-1);
+          if(response.status === 200){
+            setSubscribedQty(subscribedQty-1);
+          }
           console.log(response);
         })
         .catch(function (error) {
@@ -84,7 +87,7 @@ const handleSubscribe = useCallback(
       }
     })
   },
-  [handleClick, subscribe, subscribedQty, setSubscribedQty, maxSubscribers]
+  [handleClick, subscribe, subscribedQty, setSubscribedQty, maxSubscribers, payload]
   )
 
 
