@@ -43,7 +43,7 @@ export default function MultiActionAreaCard() {
           <Typography variant="overline" display="block" gutterBottom>
             31 ОКТ 2021, 20:00 (120 мин)
           </Typography>
-          <SubscribeCounterButton currentSubscribers={5} maxSubscribers={16} />
+          <SubscribeCounterButton currentSubscribers={5} maxSubscribers={16} user={1} event={1}/>
         </Stack>
       </CardActions>
     </Card>
