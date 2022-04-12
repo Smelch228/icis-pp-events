@@ -26,7 +26,9 @@ function FormPage () {
         <>
           <HeaderComponent>
             <Grid container>
-              <CustomIconButton onClick={() => router.back()}><ArrowBack/></CustomIconButton>
+              <CustomIconButton onClick={() => router.back()}>
+                <ArrowBack/>
+              </CustomIconButton>
             </Grid>
           </HeaderComponent>
           <Form />
